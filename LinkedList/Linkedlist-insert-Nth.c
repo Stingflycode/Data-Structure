@@ -5,7 +5,7 @@ struct Node {
   struct Node* Next;
 };
 struct Node* head;
-void insert(int x,int p);
+void insert(int x,int n);
 void print();
 int main()
 {
@@ -17,18 +17,18 @@ int main()
   print(); //[3 7 0]
     return 0;
 }
-void insert(int x,int p){
+void insert(int x,int n){
     struct Node* temp1 =(struct Node*)malloc(sizeof(temp1));
     temp1->data=x;
     temp1->Next=NULL;
-    if(p == 1){
+    if(n == 1){
         temp1->Next=head;
         head=temp1;
         return;
     }
     struct Node* temp2 = head;
     int i=0;
-    for(i;i<p-2;i++){
+    for(i;i<n-2;i++){
         temp2=temp2->Next;
     }
     temp1->Next=temp2->Next;
