@@ -1,49 +1,43 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
 struct Node {
-    int val;
-    struct Node* Next;
+  int data;
+  struct Node* Next;
 };
-struct Node* head ;
+struct Node* head;
 void insert(int x);
 void print();
 int main()
 {
    head =NULL;
-   int d,i=0,f;
-   printf("How many number you want to insert:\n");
+   int d,i=0,a;
+   printf("How many number you want to insert:\n ");
    scanf("%d",&d);
    for(i;i<d;i++){
-       printf("Enter your number:\n");
-       scanf("%d",&f);
-       insert(f);
-       print();
+       printf("Enter your number: \n");
+       scanf("%d",&a);
+      insert(a);
+      print();
    }
+   
+
     return 0;
 }
-void insert(int x)
-{
-    struct Node *A = malloc(sizeof(*A));
-
-    A->val = x;
-    A->Next = NULL;
-
-    struct Node *prev = NULL;
-    for (struct Node *cur = head;  cur != NULL;  cur = cur->Next)
-        prev = cur;
-
-    if (prev != NULL)
-        prev->Next = A;
-    else
-        head = A;
+void insert(int x){
+    struct Node* A =(struct Node*)malloc(sizeof(A));
+    // head=A;
+    // A->data=X;
+    // A->Next =NULL;
+    A->data=x;
+    A->Next=head;
+    head=A;
 }
-
-void print() {
-    printf("[");
-    struct Node *B = head;
-    while (B != NULL) {
-        printf(" %d", B->val);
-        B = B->Next;
+void print(){
+    printf("[ ");
+    struct Node* temp= head;
+    while(temp != NULL){
+        printf("%d ",temp->data);
+        temp=temp->Next;
     }
-    printf(" ]\n");
+    printf("]\n");
 }
