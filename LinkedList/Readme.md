@@ -4,6 +4,7 @@ codeschool: https://bit.ly/3d1LogJ
 
 📕LinkedList-Front : insert the  elements at the beginning of the Linkedlist.
 ==========================
-📗Linkedlist-insert-Nth : insert the elements at Nth position in the linked-List
+📗Linkedlist-insert-Nth : insert the elements at Nth position in the linked-List.
 ==========================
-
+📘Delete-a-node-at-nth-position : C code to delete node at nth position in a linked list. 
+==========================
