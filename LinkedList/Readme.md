@@ -10,3 +10,5 @@ codeschool: https://bit.ly/3d1LogJ
 ==========================
 📙Reverse-a-linked-list-Iterative-method :  C program to reverse a singly linked list. 
 ==========================
+📚Print-elements-fwd-rev : two recursive functions "Print" and "ReversePrint"  that will print the elements of a singly linked list in forward and reverse order respectively.
+==========================
