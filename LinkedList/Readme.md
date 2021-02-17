@@ -12,3 +12,5 @@ codeschool: https://bit.ly/3d1LogJ
 ==========================
 📚Print-elements-fwd-rev : two recursive functions "Print" and "ReversePrint"  that will print the elements of a singly linked list in forward and reverse order respectively.
 ==========================
+📔Rev-linked-list-using-recursion : code to reverse a linked list using recursion.
+==========================
