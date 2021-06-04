@@ -1,43 +1,55 @@
 #include <stdio.h>
-#include<stdlib.h>
-struct Node {
-  int data;
-  struct Node* Next;
+#include <stdlib.h>
+//Declare our linked list:
+struct node{
+  int ch;
+  struct node* link;
 };
-struct Node* head;
-void insert(int x);
+//we now intiate our head node the node which will identify our likedlist
+struct node* head;
+//prototype the insert function
+void insert(int a);
+//prototype the print function
 void print();
-int main()
-{
-   head =NULL;
-   int d,i=0,a;
-   printf("How many number you want to insert:\n ");
-   scanf("%d",&d);
-   for(i;i<d;i++){
-       printf("Enter your number: \n");
-       scanf("%d",&a);
-      insert(a);
-      print();
-   }
-   
-
+int main() {
+     //set the head to NULL
+    head =NULL;
+    int x;
+    int i,n;
+    printf("Enter how many Letter you wish for:\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        printf("Enter the letter:\n");
+        scanf("%d",&x);
+        insert(x);
+        print();
+    }
+    
     return 0;
 }
-void insert(int x){
-    struct Node* A =(struct Node*)malloc(sizeof(A));
-    // head=A;
-    // A->data=X;
-    // A->Next =NULL;
-    A->data=x;
-    A->Next=head;
-    head=A;
+//construct out insert function
+void insert(int a){
+    //we create a new block of memory in the heap here 
+    struct node* temp = (struct node*)malloc(sizeof(struct node));
+    //store the passed arrgument  in ch 
+    temp->ch=a;
+    //fill the other room of the created block with the location/link
+    //the previous node/block
+    temp->link=head;
+    //change the head to point to our newly created block
+    head=temp;
 }
 void print(){
-    printf("[ ");
-    struct Node* temp= head;
-    while(temp != NULL){
-        printf("%d ",temp->data);
-        temp=temp->Next;
+     //store the value of the head so we do not lose the head
+      struct node* temp1=head; 
+      //iterate through the nodes and print the data in it until we hit the NULL value 
+      printf("[");
+      
+      while(temp1->link != NULL){
+          printf("%d",temp1->ch);
+          //will go to the next node 
+          temp1=temp1->link;
     }
-    printf("]\n");
+    printf("%d",temp1->ch);
+     printf("]\n");
 }
