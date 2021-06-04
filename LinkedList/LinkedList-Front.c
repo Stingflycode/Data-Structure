@@ -45,11 +45,10 @@ void print(){
       //iterate through the nodes and print the data in it until we hit the NULL value 
       printf("[");
       
-      while(temp1->link != NULL){
+      while(temp1 != NULL){
           printf("%d",temp1->ch);
           //will go to the next node 
           temp1=temp1->link;
     }
-    printf("%d",temp1->ch);
      printf("]\n");
 }
